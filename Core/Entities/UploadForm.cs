@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
-namespace API.Model;
+namespace Core.Entities;
 
 public class UploadForm
 {

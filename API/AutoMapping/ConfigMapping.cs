@@ -1,6 +1,7 @@
 ﻿using API.Controllers;
-using API.Model;
+using API.Dtos.UploadBoletos;
 using AutoMapper;
+using Core.Entities;
 
 namespace API.AutoMapping;
 
@@ -8,7 +9,7 @@ public class ConfigMapping : Profile
 {
     public ConfigMapping()
     {
-        CreateMap<ReturnUploadProcessDto, UploadProcess>().ReverseMap();
+        CreateMap<UploadBoletoDto, UploadBoleto>().ReverseMap();
         CreateMap<Mensagem, Mensagem>().ReverseMap();
     }
 }

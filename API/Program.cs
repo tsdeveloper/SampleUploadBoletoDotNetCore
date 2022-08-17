@@ -1,7 +1,8 @@
 using API;
 using API.AutoMapping;
 using API.Controllers;
-using API.Model;
+using API.Dtos.UploadBoletos;
+using Core.Entities;
 using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,8 +15,8 @@ builder.Services.AddAutoMapper(typeof(ConfigMapping));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IValidator<UploadProcess>, UploadProcessValidator>();
-builder.Services.AddScoped<IValidator<ReturnUploadProcessDto>, ReturnUploadProcessDtoValidator>();
+builder.Services.AddScoped<IValidator<UploadBoleto>, UploadBoletosValidator>();
+builder.Services.AddScoped<IValidator<UploadBoletoDto>, UploadBoletosDtoValidator>();
 
 
 var app = builder.Build();

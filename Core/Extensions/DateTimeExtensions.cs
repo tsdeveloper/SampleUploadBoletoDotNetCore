@@ -1,10 +1,10 @@
 ﻿using System.Globalization;
 
-namespace API.Extensions;
+namespace Core.Extensions;
 
 public static class DateTimeExtensions
 {
-    public static DateTime ToDateTime(this string s,
+    public static DateTime ConvertStringToDateTime(this string s,
         string format = "yyyyMMdd", string cultureString = "en-US")
     {
         try
