@@ -42,7 +42,7 @@ public class UploadFilesController : ControllerBase
          
         var listUploadBoletosDto = _mapper.
                                         Map<List<UploadBoletoDto>>(await FormFileHelper
-                                                        .ExtrairDadosBoletoToDto(uploadForm.UploadFile));
+                                                        .ExtrairDadosBoletoToDto(uploadForm.UploadFile.OpenReadStream()));
 
         _boletoSpecification.ObterBoletosGroupByCodigoCliente(ref listUploadBoletosDto);
 

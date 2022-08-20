@@ -7,10 +7,10 @@ namespace Core.Helpers.FormFiles;
 
 public static class  FormFileHelper
 {
-    public static async Task<List<UploadBoleto>> ExtrairDadosBoletoToDto(this IFormFile uploadForm)
+    public static async Task<List<UploadBoleto>> ExtrairDadosBoletoToDto(Stream streamFile)
     {
         var result = new StringBuilder();
-        result = await LerLinhasArquivoTxtBoleto(uploadForm, result);
+        result = await LerLinhasArquivoTxtBoleto(streamFile, result);
 
         return PopularUploadBoletoFromArquivoTxt(result);
     }
@@ -63,9 +63,9 @@ public static class  FormFileHelper
         return listUploadBoletos;
     }
 
-    private static async Task<StringBuilder> LerLinhasArquivoTxtBoleto(IFormFile uploadForm, StringBuilder result)
+    private static async Task<StringBuilder> LerLinhasArquivoTxtBoleto(Stream streamFile, StringBuilder result)
     {
-        using (var stream = uploadForm.OpenReadStream())
+        using (var stream = streamFile)
         {
             using (var reader = new StreamReader(stream))
             {
