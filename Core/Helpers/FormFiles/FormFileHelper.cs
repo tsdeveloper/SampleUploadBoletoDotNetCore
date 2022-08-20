@@ -1,9 +1,8 @@
 ﻿using System.Text;
 using Core.Entities;
-using Core.Enums.UploadFiles;
+using Core.Enums.UploadBoletos;
 using Core.Extensions;
 using Microsoft.AspNetCore.Http;
-
 namespace Core.Helpers.FormFiles;
 
 public static class  FormFileHelper
@@ -42,7 +41,7 @@ public static class  FormFileHelper
                     Quantidade = StringExtensions.CheckOutOfRange(6, enti) ? enti[6].ParseToInt() : 0,
                     PrecoUnitario = StringExtensions.CheckOutOfRange(7, enti) ? enti[7].ParseToDecimal() : 0M
                 };
-                var validator = new UploadBoletosValidator();
+                var validator = new BoletosValidator();
 
                 var resultValidator = validator.Validate(uploadBoletos);
 

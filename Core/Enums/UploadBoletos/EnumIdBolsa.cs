@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Core.Enums.UploadFiles;
+namespace Core.Enums.UploadBoletos;
 
 public enum EnumIdBolsa
 {

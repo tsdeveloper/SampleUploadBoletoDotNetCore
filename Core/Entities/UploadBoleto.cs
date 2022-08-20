@@ -1,9 +1,9 @@
-﻿using Core.Enums.UploadFiles;
+﻿using Core.Enums.UploadBoletos;
 using FluentValidation;
 
 namespace Core.Entities;
 
-public class UploadBoleto
+public class UploadBoleto : BaseEntity
 {
     public UploadBoleto()
     {
@@ -32,9 +32,9 @@ public class UploadBoleto
     public List<Mensagem> Mensagem { get; set; }
 }
 
-public class UploadBoletosValidator : AbstractValidator<UploadBoleto>
+public class BoletosValidator : AbstractValidator<UploadBoleto>
 {
-    public UploadBoletosValidator()
+    public BoletosValidator()
     {
         RuleFor(x => x.DataOperacao)
             .GreaterThan(default(DateTime))

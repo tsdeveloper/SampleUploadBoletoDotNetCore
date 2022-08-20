@@ -1,21 +1,22 @@
 ﻿using API.Dtos.UploadBoletos;
 using AutoMapper;
 using Core.Entities;
+using Core.Interfaces.UploadBoletos;
 using Core.Strategies.Boletos;
 using Core.Validators.Boletos;
 
 namespace API.Specifications.UploadBoletos;
 
-public class AtualizarValorDescontoBoletoSpecification
+public class BoletoSpecification : IBoletoSpecification
 {
     private readonly IMapper _mapper;
     
 
-    public AtualizarValorDescontoBoletoSpecification(IMapper mapper)
+    public BoletoSpecification(IMapper mapper)
     {
         _mapper = mapper;
     }
-    public void AplicarValorDescontoBoleto(ref List<UploadBoletoDto> listUploadboleto)
+    public void ObterBoletosGroupByCodigoCliente(ref List<UploadBoletoDto> listUploadboleto)
     {
         foreach (var objetoFinanceiro in listUploadboleto
                      .GroupBy(x => new {x.CodigoCliente}, 

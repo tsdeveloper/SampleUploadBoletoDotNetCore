@@ -1,6 +1,6 @@
 ﻿namespace Core.Interfaces.Boletos;
 
-public interface IDescontoBoleto
+public interface IBoletoDesconto
 {
     public decimal aplicar();
 }

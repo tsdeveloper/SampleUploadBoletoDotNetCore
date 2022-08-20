@@ -4,7 +4,7 @@ namespace Core.Validators.Boletos;
 
 public class BoletoDescontoSpefication
 {
-    public decimal ValidarDescontoBoleto(IDescontoBoleto boleto)
+    public decimal ValidarDescontoBoleto(IBoletoDesconto boleto)
     {
         return boleto.aplicar();
     }

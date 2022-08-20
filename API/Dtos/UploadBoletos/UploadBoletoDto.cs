@@ -1,6 +1,6 @@
 ﻿using API.Controllers;
 using Core.Entities;
-using Core.Enums.UploadFiles;
+using Core.Enums.UploadBoletos;
 using FluentValidation;
 
 namespace API.Dtos.UploadBoletos;

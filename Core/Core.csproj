@@ -16,4 +16,9 @@
       <PackageReference Include="FluentValidation" Version="11.2.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Interfaces\Interators" />
+      <Folder Include="Iterator\Boletos" />
+    </ItemGroup>
+
 </Project>

@@ -3,7 +3,7 @@ using Core.Interfaces.Boletos;
 
 namespace Core.Strategies.Boletos;
 
-public class AplicarDescontoBoleto10PorCento : IDescontoBoleto
+public class AplicarDescontoBoleto10PorCento : IBoletoDesconto
 {
     private readonly UploadBoleto _uploadProcessDto;
 

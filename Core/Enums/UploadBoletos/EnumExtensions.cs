@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
 
-namespace Core.Enums.UploadFiles;
+namespace Core.Enums.UploadBoletos;
 
 public static class EnumExtensions
 {
