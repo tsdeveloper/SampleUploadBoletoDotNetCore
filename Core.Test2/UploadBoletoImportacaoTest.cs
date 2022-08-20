@@ -78,3 +78,4 @@ public class UploadBoletoImportacaoTest : BaseTest
         return listObj.Exists(x => descriptionAttr.Equals(x.TipoOperacao));
     }
 }
+
