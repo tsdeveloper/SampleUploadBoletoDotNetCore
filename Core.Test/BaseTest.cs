@@ -1,40 +1,42 @@
-﻿using FluentValidation;
-using Infrastructure.Data.Context;
+﻿using API.Dtos.UploadBoletos;
+using AutoMapper;
+using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using NUnit.Framework;
+
+using Microsoft.Extensions.Hosting;
+using Moq;
 
 namespace Core.Test;
 
-public class BaseTest
+public abstract class BaseTest
 {
-    protected UploadBoletoContext ctx;
-    public BaseTest(UploadBoletoContext ctx = null)
+    protected  IMapper _mapper; 
+    protected IHostingEnvironment HostingEnvironment { get; private set; }
+    
+    public void Inicializador()
     {
-        this.ctx = ctx ?? GetInMemoryDBContext();
-    }
-    protected UploadBoletoContext GetInMemoryDBContext()
-    {
+        var mockEnvironment = new Mock<IHostingEnvironment>();
+        
         var serviceProvider = new ServiceCollection()
-            .AddEntityFrameworkSqlite()
             .BuildServiceProvider();
-        var builder = new DbContextOptionsBuilder<UploadBoletoContext>();
-        var options = builder.UseSqlite("test").UseInternalServiceProvider(serviceProvider).Options;
-        UploadBoletoContext dbContext = new UploadBoletoContext(options);
-        dbContext.Database.EnsureDeleted();
-        dbContext.Database.EnsureCreated();
-        return dbContext;
-    }
-
-    protected void CheckError<T>(AbstractValidator<T> validator, int ErrorCode, T vm)
-    {
-        var val = validator.Validate(vm);
-        Assert.False(val.IsValid);
-
-        if (!val.IsValid)
+        
+        //auto mapper configuration
+        var mockMapper = new MapperConfiguration(cfg =>
         {
-            bool hasError = val.Errors.Any(a => a.ErrorCode.Equals(ErrorCode.ToString()));
-            Assert.True(hasError);
-        }
+            cfg.AddProfile(new AutoMapperProfile());
+        });
+        _mapper = mockMapper.CreateMapper();
+        mockEnvironment.Setup(m => m.EnvironmentName)
+            .Returns("Hosting:UnitTestEnvironment");
+        HostingEnvironment = mockEnvironment.Object;
+    }
+}
+
+public class AutoMapperProfile : Profile
+{
+    public AutoMapperProfile()
+    {
+        CreateMap<UploadBoletoDto, UploadBoleto>().ReverseMap();
     }
 }

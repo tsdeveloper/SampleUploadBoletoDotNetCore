@@ -10,11 +10,11 @@ using AutoMapper;
 using Core.Enums.UploadBoletos;
 using Core.Helpers.FormFiles;
 using Core.Specifications.UploadBoletos.SpecParams;
-using Core.Test2.EnumFaker.UploadBoletos;
+using Core.Test.EnumFaker.UploadBoletos;
 using Microsoft.Extensions.Hosting;
 using Xunit;
 
-namespace Core.Test2;
+namespace Core.Test;
 
 public class UploadBoletoImportacaoTest : BaseTest
 {

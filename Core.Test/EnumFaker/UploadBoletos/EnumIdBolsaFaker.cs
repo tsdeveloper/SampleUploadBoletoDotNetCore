@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Core.Test2.EnumFaker.UploadBoletos;
+namespace Core.Test.EnumFaker.UploadBoletos;
 
 public enum EnumIdBolsaFaker
 {

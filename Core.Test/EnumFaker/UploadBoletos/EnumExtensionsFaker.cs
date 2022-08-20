@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
 
-namespace Core.Test2.EnumFaker.UploadBoletos;
+namespace Core.Test.EnumFaker.UploadBoletos;
 
 public static class EnumExtensionsFaker
 {

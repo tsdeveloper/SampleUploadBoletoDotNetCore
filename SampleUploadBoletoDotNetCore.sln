@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{54D91463-9A39-4E77-A059-67C9B968D0BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Test2", "Core.Test2\Core.Test2.csproj", "{5597BBCC-7158-4170-8C07-B86D3E5894A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Test", "Core.Test\Core.Test.csproj", "{5597BBCC-7158-4170-8C07-B86D3E5894A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Test3", "Core.Test3\Core.Test3.csproj", "{0DE57E6B-81AB-4028-8493-A081366CBBCA}"
 EndProject
